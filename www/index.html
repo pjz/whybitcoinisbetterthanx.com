@@ -20,7 +20,7 @@
 
     <script>
             function setUser(user) {
-                var utypes = ["consumer", "merchant", "investor"];
+                var utypes = ["consumer", "merchant", "investor", "government"];
                 utypes.forEach(function(t) {
                     if (user === t) {
                         $("div#" + t).show();
@@ -37,6 +37,7 @@
             <div class="span3"><a id="consumer" href="#" onclick="setUser('consumer'); return true;" class="btn btn-large btn-block">Consumer</a></div>
             <div class="span3"><a id="merchant" href="#" onclick="setUser('merchant'); return true;" class="btn btn-large btn-block">Merchant</a></div>
             <div class="span3"><a id="investor" href="#" onclick="setUser('investor'); return true;" class="btn btn-large btn-block">Investor</a></div>
+            <div class="span3"><a id="government" href="#" onclick="setUser('government'); return true;" class="btn btn-large btn-block">Government</a></div>
     </div>
 
     <p>
@@ -44,26 +45,39 @@
     <div class="row">
 
             <div class="span4">
-                    <h2>Dollars (fiat)</h2>
+                    <h2>Fiat (USD, EUR, etc)</h2>
                     <div id="consumer">
                             <!-- btc is better than usd for consumers -->
                             <ul>
                                     <li>Low weight
+                                    <li>Not counterfeitable
+                                    <li>No banking transaction costs (ATM fees, account transfer fees, etc)
                                     <li>Easily transmittable/transportable
                             </ul>
                     </div>
                     <div id="merchant">
                             <!-- btc is better than usd for merchants -->
                             <ul>
+                                    <li>Low weight
                                     <li>Not counterfeitable
-                                    <li>Secure - wallets are easily securable
+                                    <li>Secure - trivial to make secure "deposit only" wallets
                             </ul>
                     </div>
                     <div id="investor">
                             <!-- btc is better than usd for investors -->
                             <ul>
+                                    <li>Low weight
                                     <li>Known supply
-                                    <li>can't be manipulated, restricted, etc by any entity
+                                    <li>Not counterfeitable
+                                    <li>Can't be manipulated, restricted, etc by any entity
+                            </ul>
+                    </div>
+                    <div id="government">
+                            <!-- btc is better than usd for governments -->
+                            <ul>
+                                    <li>Not counterfeitable
+                                    <li>Better separation of powers - Issuing entities don't have undue influence
+                                    <li>Can't be manipulated, restricted, etc by any entity
                             </ul>
                     </div>
             </div>
@@ -73,20 +87,30 @@
                     <div id="consumer">
                             <!-- btc is better than ccard for consumers -->
                             <ul>
-				    <li>No 'gatekeeper' keeps consumers from contributing to causes or people they prefer
-				    <li>No monthly fees
+                                    <li>No monthly or interest fees
+                                    <li>Can only spend actual amount you have
+                                    <li>No 'gatekeeper' can block contributions to causes or people they prefer
                             </ul>
                     </div>
                     <div id="merchant">
                             <!-- btc is better than ccard for merchants -->
                             <ul>
+                                    <li>Nonrepudiatable transactions
                                     <li>Much much lower (and fixed, not percentage) cost per transaction
+                                    <li>No 'gatekeeper' can block contributions to causes or people they prefer
                             </ul>
                     </div>
                     <div id="investor">
                             <!-- btc is better than ccard for investor -->
                             <ul>
-                                    <li>N/A ?
+                                    <li>Not Applicable (?)
+                            </ul>
+                    </div>
+                    <div id="government">
+                            <!-- btc is better than ccard for governments -->
+                            <ul>
+                                    <li>Much much lower (and fixed, not percentage) cost per transaction
+                                    <li>No 'gatekeeper' can block contributions to causes or people they prefer
                             </ul>
                     </div>
             </div>
@@ -96,19 +120,39 @@
                     <div id="consumer">
                             <!-- btc is better than gold for consumers -->
                             <ul>
-                                    <li>N/A ?
+                                    <li>Low weight
+                                    <li>Not counterfeitable
+                                    <li>Easily transmittable/transportable
+                                    <li>Secure - trivial to make secure "deposit only" wallets
                             </ul>
                     </div>
                     <div id="merchant">
                             <!-- btc is better than gold for merchants -->
                             <ul>
-                                    <li>N/A ?
+                                    <li>Low weight
+                                    <li>Not counterfeitable
+                                    <li>Easily transmittable/transportable
+                                    <li>Secure - trivial to make secure "deposit only" wallets
                             </ul>
                     </div>
                     <div id="investor">
                             <!-- btc is better than gold for investors -->
                             <ul>
-                                    <li>N/A ?
+                                    <li>Low weight
+                                    <li>Known supply
+                                    <li>Not counterfeitable
+                                    <li>Easily transmittable/transportable
+                                    <li>Secure - trivial to make secure "deposit only" wallets
+                            </ul>
+                    </div>
+                    <div id="government">
+                            <!-- btc is better than gold for governments -->
+                            <ul>
+                                    <li>Low weight
+                                    <li>Known supply
+                                    <li>Not counterfeitable
+                                    <li>Easily transmittable/transportable
+                                    <li>Secure - trivial to make secure "deposit only" wallets
                             </ul>
                     </div>
             </div>
