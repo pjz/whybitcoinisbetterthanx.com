@@ -11,7 +11,7 @@
     <title>Why Bitcoin is better than X</title>
 
 </head>
-<body>
+<body onload="setUser('unset')" >
 <div class="container" >
 
     <h1>Why Bitcoin is better than X</h1>
@@ -19,46 +19,98 @@
     <h2> I am a...</h2>
 
     <script>
-            function setUser(user) { 
+            function setUser(user) {
                 var utypes = ["consumer", "merchant", "investor"];
                 utypes.forEach(function(t) {
                     if (user === t) {
                         $("div#" + t).show();
+                        $("a#" + t).addClass("btn-success");
                     } else {
                         $("div#" + t).hide();
+                        $("a#" + t).removeClass("btn-success");
                     }
                 });
             }
     </script>
+
     <div class="row">
-            <div class="span3"><a href="#" onclick="setUser('consumer'); return true;" class="btn btn-large btn-block">Consumer</a></div>
-            <div class="span3"><a href="#" onclick="setUser('merchant'); return true;" class="btn btn-large btn-block">Merchant</a></div>
-            <div class="span3"><a href="#" onclick="setUser('investor'); return true;" class="btn btn-large btn-block">Investor</a></div>
+            <div class="span3"><a id="consumer" href="#" onclick="setUser('consumer'); return true;" class="btn btn-large btn-block">Consumer</a></div>
+            <div class="span3"><a id="merchant" href="#" onclick="setUser('merchant'); return true;" class="btn btn-large btn-block">Merchant</a></div>
+            <div class="span3"><a id="investor" href="#" onclick="setUser('investor'); return true;" class="btn btn-large btn-block">Investor</a></div>
     </div>
 
-    <p />
+    <p>
     <h1>Bitcoin is better than</h1>
     <div class="row">
 
             <div class="span4">
                     <h2>Dollars (fiat)</h2>
-                    <div id="consumer">btc is better than usd for consumers</div>
-                    <div id="merchant">btc is better than usd for merchants</div>
-                    <div id="investor">btc is better than usd for investors</div>
+                    <div id="consumer">
+                            <!-- btc is better than usd for consumers -->
+                            <ul>
+                                    <li>Low weight
+                                    <li>Easily transmittable/transportable
+                            </ul>
+                    </div>
+                    <div id="merchant">
+                            <!-- btc is better than usd for merchants -->
+                            <ul>
+                                    <li>Not counterfeitable
+                                    <li>Secure - wallets are easily securable
+                            </ul>
+                    </div>
+                    <div id="investor">
+                            <!-- btc is better than usd for investors -->
+                            <ul>
+                                    <li>Known supply
+                                    <li>can't be manipulated, restricted, etc by any entity
+                            </ul>
+                    </div>
             </div>
 
             <div class="span4">
                     <h2>Credit Cards</h2>
-                    <div id="consumer">btc is better than ccard for consumers</div>
-                    <div id="merchant">btc is better than ccard for merchants</div>
-                    <div id="investor">btc is better than ccard for investors</div>
+                    <div id="consumer">
+                            <!-- btc is better than ccard for consumers -->
+                            <ul>
+				    <li>No 'gatekeeper' keeps consumers from contributing to causes or people they prefer
+				    <li>No monthly fees
+                            </ul>
+                    </div>
+                    <div id="merchant">
+                            <!-- btc is better than ccard for merchants -->
+                            <ul>
+                                    <li>Much much lower (and fixed, not percentage) cost per transaction
+                            </ul>
+                    </div>
+                    <div id="investor">
+                            <!-- btc is better than ccard for investor -->
+                            <ul>
+                                    <li>N/A ?
+                            </ul>
+                    </div>
             </div>
 
             <div class="span4">
                     <h2>Gold</h2>
-                    <div id="consumer">btc is better than gold for consumers</div>
-                    <div id="merchant">btc is better than gold for merchants</div>
-                    <div id="investor">btc is better than gold for investors</div>
+                    <div id="consumer">
+                            <!-- btc is better than gold for consumers -->
+                            <ul>
+                                    <li>N/A ?
+                            </ul>
+                    </div>
+                    <div id="merchant">
+                            <!-- btc is better than gold for merchants -->
+                            <ul>
+                                    <li>N/A ?
+                            </ul>
+                    </div>
+                    <div id="investor">
+                            <!-- btc is better than gold for investors -->
+                            <ul>
+                                    <li>N/A ?
+                            </ul>
+                    </div>
             </div>
 
     </div>
