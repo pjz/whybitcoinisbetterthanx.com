@@ -1,14 +1,8 @@
+# deprecated in favor of build.py
 
-UIKIT:=Flat-UI-master
+show_targets %:
+	@echo "make is deprecated. Trying 'python build.py $@'"...
+	@python build.py $@ || python build.py
 
-output:
-	mkdir output
-	cd $(UIKIT); tar cf - css fonts images js sass | (cd ../output ; tar xvf - )
-	cd www; tar cf - . | (cd ../output; tar xvf - )
-
-publish: output
-	s3cmd sync output/ s3://whybitcoinisbetterthanx.com
-
-clean:
-	rm -rf output
+.PHONY: show_targets
 
