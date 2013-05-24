@@ -24,7 +24,7 @@
       }
     </style>
 </head>
-<body onload="setUser('consumer')" >
+<body onload="setUser(window.location.hash)" >
 <div class="container" >
 
     <h1>Why Bitcoin is better than X</h1>
@@ -32,25 +32,35 @@
     <h2> I am a...</h2>
 
     <script>
-            function setUser(user) {
-                var utypes = ["consumer", "merchant", "investor", "government"];
-                utypes.forEach(function(t) {
-                    if (user === t) {
-                        $("div#" + t).show();
-                        $("a#" + t).addClass("btn-success");
-                    } else {
-                        $("div#" + t).hide();
-                        $("a#" + t).removeClass("btn-success");
-                    }
-                });
+        function setUser(user) {
+            var utypes = ["consumer", "merchant", "investor", "government"];
+            var set_to = user;
+            if (set_to.substring(0, 1) === "#") {
+                    set_to = set_to.substring(1);
             }
+            if ($.inArray(set_to, utypes) < 0) {
+                    // console.log("defaulting to consumer instead of " + set_to);
+                    set_to = "consumer";
+            }
+            // console.log("changing to " + set_to);
+            utypes.forEach(function(t) {
+                if (set_to === t) {
+                    $("div#" + t).show();
+                    $("a#" + t).addClass("btn-success");
+                } else {
+                    $("div#" + t).hide();
+                    $("a#" + t).removeClass("btn-success");
+                }
+            });
+            return true;
+        }
     </script>
 
     <div class="row">
-            <div class="span3"><a id="consumer" href="#" onclick="setUser('consumer'); return true;" class="btn btn-large btn-block">Consumer</a></div>
-            <div class="span3"><a id="merchant" href="#" onclick="setUser('merchant'); return true;" class="btn btn-large btn-block">Merchant</a></div>
-            <div class="span3"><a id="investor" href="#" onclick="setUser('investor'); return true;" class="btn btn-large btn-block">Investor</a></div>
-            <div class="span3"><a id="government" href="#" onclick="setUser('government'); return true;" class="btn btn-large btn-block">Government</a></div>
+            <div class="span3"><a id="consumer" href="#consumer" onclick="return setUser('consumer');" class="btn btn-large btn-block">Consumer</a></div>
+            <div class="span3"><a id="merchant" href="#merchant" onclick="return setUser('merchant');" class="btn btn-large btn-block">Merchant</a></div>
+            <div class="span3"><a id="investor" href="#investor" onclick="return setUser('investor');" class="btn btn-large btn-block">Investor</a></div>
+            <div class="span3"><a id="government" href="#government" onclick="return setUser('government');" class="btn btn-large btn-block">Government</a></div>
     </div>
 
     <br/>
